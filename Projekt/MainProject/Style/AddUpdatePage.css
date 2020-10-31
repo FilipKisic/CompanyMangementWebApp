@@ -1,0 +1,95 @@
+﻿body {
+    font-family: "HelveticaNeue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    height: 100%;
+    background-image: linear-gradient(to right, #115DAA, #63B0FF);
+}
+
+.container {
+    width: 100%;
+    margin: 0;
+}
+
+.custom-col{
+    margin: 1.5em 0 0 5em;
+}
+
+.page-title {
+    color: white;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.span-label {
+    font-family: inherit;
+    font-size: 2em;
+    color: white;
+}
+
+.form-control {
+    font-family: inherit;
+    font-size: 2em;
+    width: 90%;
+    border-radius: 10px;
+}
+
+.btn-update, .btn-add {
+    width: 80%;
+    height: 2.5em;
+    margin-top: 0.7em;
+    font-family: inherit;
+    font-size: 2em;
+    border-radius: 10px;
+}
+
+.btn-update {
+    background: #63B0FF;
+}
+
+.btn-add {
+    background: #D9AD2B;
+    color: black;
+}
+
+.gridView {
+    background-color: #fff;
+    margin: 0 auto;
+    margin-top: 9em;
+    margin-right: 3em;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: center;
+}
+
+.gridView th, .gridView td {
+    font-size: 2em;
+    padding: 0.2em 1em;
+}
+
+.gridView th {
+    color: black !important;
+    width: 800px;
+}
+
+.select-col{
+    width: 100px !important;
+}
+
+.btn-select {
+    font-size: 0.8em;
+    width: 100%;
+    color: black;
+    border: 1px solid #D9AD2B;
+    border-radius: 10px;
+}
+
+.id-col{
+    width: 50px !important;
+}
+
+.error-label{
+    color: white;
+    width: 90%;
+    margin-top: 1em;
+    font-weight: bold;
+    text-align: center;
+}

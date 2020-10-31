@@ -1,0 +1,13 @@
+﻿.navbar {
+    background-image: linear-gradient(to right, #115DAA, #63B0FF);
+}
+.home-link {
+    font-family: "HelveticaNeue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif !important;
+    color: white;
+    font-size: 1.2em;
+    text-decoration: none;
+}
+
+.home-link:hover{
+    color: white;
+}

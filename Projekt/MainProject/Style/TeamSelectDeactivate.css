@@ -1,0 +1,8 @@
+﻿.gridView th, .gridView td {
+    font-size: 1.6em !important;
+}
+
+.gridView th {
+    color: black !important;
+    width: 340px;
+}

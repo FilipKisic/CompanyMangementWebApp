@@ -1,0 +1,59 @@
+﻿body {
+    font-family: "HelveticaNeue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    height: 100%;
+    background-image: linear-gradient(to right, #115DAA, #63B0FF);
+}
+
+.container {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.main-title {
+    color: white;
+    margin-top: 2em;
+}
+
+
+.gridView{
+    margin-top: 1em !important;
+    font-family: inherit; 
+    margin-bottom: 2em !important;
+}
+
+.btn-select {
+    font-size: 0.8em !important;
+    font-family: inherit;
+    width: 100% !important;
+    color: black !important;
+    border: 1px solid #D9AD2B;
+    border-radius: 10px !important;
+}
+
+.span-label{
+    font-family: inherit;
+    font-size: 2em;
+    color: white;
+}
+
+.form-control{
+    font-family: inherit;
+    font-size: 2em !important;
+    width: 95% !important;
+    border-radius: 10px !important;
+}
+
+.btn-export {
+    background-color: #D9AD2B !important;
+    font-size: 1.8em !important;
+    font-family: inherit;
+    margin-top: 0.5em;
+    width: 33% !important;
+    height: 2.5em;
+    color: black !important;
+    border-radius: 10px !important;
+}
+
+.btn-select:hover, .btn-export:hover{
+    color: white !important;
+}

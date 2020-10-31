@@ -1,0 +1,42 @@
+﻿body {
+    font-family: "HelveticaNeue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    height: 100%;
+    background-image: linear-gradient(to right, #115DAA, #63B0FF);
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.main-title{
+    color: white;
+    font-family: inherit;
+    font-weight: bold;
+    margin-top: 2em;
+    margin-bottom: 1em;
+}
+
+.span-label {
+    font-family: inherit;
+    font-size: 2em;
+    color: white;
+}
+
+.form-control {
+    font-family: inherit;
+    font-size: 2em !important;
+    width: 100% !important;
+    border-radius: 10px !important;
+}
+
+.btn-custom{
+    font-family: inherit;
+    font-size: 2em !important;
+    font-weight: bold !important;
+    width: 45% !important;
+}
+
+.btn-logout{
+    float: right;
+}

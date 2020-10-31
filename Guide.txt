@@ -1,0 +1,11 @@
+1. U SSMS-u otvoriti DBScript.sql -> create database -> use RWA_App -> izvršiti ostatak skripte
+
+2. U VS-u otvoriti s CTRL + F5 LoginPage.aspx -> user: mislav.balkovic@algebra.hr, pass: algebra
+
+3. Redoslijed kreiranja objekata: klijent -> zaposlenik -> tim -> projekt.
+
+4. Ukoliko se želi otvoriti MVC aplikacija, prvo se odlogirati u postavkama gore desno na AdminDashboard.aspx-u.
+
+5. Pogledati u bazi email i pass od novokreiranog radnika i njih upisati te nastaviti na MVC.
+
+6. Ukoliko MVC ne radi, ostaviti LoginPage.aspx u browseru i otići na VS, postaviti MVC kao StartUp i pokrenuti ShowAll.cshtml

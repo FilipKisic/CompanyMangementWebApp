@@ -1,0 +1,178 @@
+﻿@model IEnumerable<MVC.Models.Activity>
+@{
+    ViewBag.Title = "ShowAll";
+}
+<audio id="notify">
+    <source src="~/Audio/done-for-you.mp3" type="audio/mp3" />
+</audio>
+<div class="row">
+    <div class="col-lg-6 col-md-12">
+        <div class="custom-col">
+            <ul class="page-title">
+                <li id="hours"></li>
+                <li id="point">:</li>
+                <li id="minutes"></li>
+                <li id="point">:</li>
+                <li id="seconds"></li>
+            </ul>
+            <div style="height: 500px; overflow:auto;">
+                <table id="timeTable" class="table time-table">
+                    <thead>
+                        <tr>
+                            <th class="table-head" colspan="2" id="activityName">Naziv projekta</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="time-row-head">
+                            <td>Vrijeme:</td>
+                            <td>Zabilježeno:</td>
+                        </tr>
+                    </tbody>
+                    <tfoot>
+                        <tr class="time-row-head">
+                            <td>Radni sati:</td>
+                            <td>Prekovremeno:</td>
+                        </tr>
+                        <tr class="time-row">
+                            <td id="totalTime">00:00</td>
+                            <td id="overtime">00:00</td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <span class="custom-label">Uredi ukupno vrijeme:</span>
+                    <input type="time" id="EditTime" class="form-control edit-time" value="" />
+                </div>
+                <div class="col-lg-6">
+                    <br />
+                    <br />
+                    <button id="saveTime" onclick="editTime()" type="submit" class="btn btn-save">Spremi vrijeme</button>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <button id="startButton" onclick="startTimer()" class="btn btn-primary btn-start">Start</button>
+                </div>
+                <div class="col-lg-6">
+                    <button id="stopButton" onclick="resetTimer()" class="btn btn-primary btn-stop">Stop</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-6 col-md-12">
+        <table class="table custom-table">
+            <thead>
+                <tr>
+                    <th class="custom-table-head">Aktivnosti</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var p in Model)
+                {
+                    <tr class="custom-table-row">
+                        <td>
+                            @Html.ActionLink(
+                               linkText: p.ActivityName,
+                               actionName: "Select",
+                               htmlAttributes: new
+                                    {
+                                   @class = "activity-name",
+                                   data_id = p.IDActivity,
+                                   data_name = p.ActivityName,
+                                   data_duration = p.DurationInMinutes,
+                                   data_project = p.ProjectID
+                               },
+                               routeValues: new { id = p.IDActivity })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+@section scripts{
+    <script>
+        var activityId = 0;
+        var activityDurationSum = 0;
+        var personalDurationSum = 0;
+        const workerId = @ViewBag.workerid;
+
+        $(document).ready(function () {
+            setInterval(function () {
+                var seconds = new Date().getSeconds();
+                $('#seconds').html((seconds < 10 ? "0" : "") + seconds);
+            }, 1000);
+            setInterval(function () {
+                var minutes = new Date().getMinutes();
+                $('#minutes').html((minutes < 10 ? "0" : "") + minutes);
+            }, 1000);
+            setInterval(function () {
+                var hours = new Date().getHours();
+                $('#hours').html((hours < 10 ? "0" : "") + hours);
+            }, 1000);
+            $('#startButton').prop('disabled', true);
+            $('#stopButton').prop('disabled', true);
+            $('#saveTime').prop('disabled', true);
+
+            let time = document.getElementById('EditTime');
+            let oldTime = time.value;
+            let isChanged = function () {
+                if (time.value !== oldTime) {
+                    oldTime = time.value;
+                    return true;
+                }
+                return false;
+            };
+            time.addEventListener("blur", function () {
+                if (isChanged()) {
+                    var timeSplit = oldTime.split(':');
+                    if (timeSplit[0] >= 12 && parseInt(timeSplit[1]) >= 0)
+                        document.getElementById('saveTime').disabled = true;
+                    else
+                        document.getElementById('saveTime').disabled = false;
+                }
+            });
+        });
+
+        $('.activity-name').on('click', function (e) {
+            e.preventDefault();
+            $('#startButton').prop('disabled', false);
+            const { id: id } = this.dataset;
+            activityId = id;
+            $.ajax({
+                url: '@Url.Action(controllerName: "Employee", actionName:"Select")',
+                data: { id, workerId }
+            })
+                .done(function (employee) {
+                    console.log(employee);
+                    activityDurationSum = employee.durationInMinutes;
+                    personalDurationSum = employee.personalDurationInMinutes;
+                    for (var prop in employee) {
+                        $(`#${prop}`).html(employee[prop]);
+                    }
+                })
+        });
+
+        $('#totalTime').click(function () {
+            $('#EditTime').val($(this).text());
+        });
+
+        //3.send updated data via ajax to controller
+        $('#saveTime').click(function (e) {
+            e.preventDefault();
+            activityDurationSum += window.$vars.durationInMins;
+            personalDurationSum += window.$vars.durationInMins;
+            console.log('Activity: ' + parseInt(activityId) + ', total activity duration: ' + parseInt(activityDurationSum) + ', total personal duration: ' + parseInt(personalDurationSum));
+            $.ajax({
+                url: '@Url.Action(controllerName: "Employee", actionName: "UpdateHours")',
+                data: { activityId, workerId, personalDurationSum }
+            })
+        });
+
+    </script>
+}
+
+@*TODO: Total duration resets after choosing other activity*@

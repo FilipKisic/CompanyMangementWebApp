@@ -1,0 +1,161 @@
+﻿body {
+    font-family: "HelveticaNeue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    height: 100%;
+    background-image: linear-gradient(to right, #115DAA, #63B0FF);
+}
+
+.navbar {
+    background-image: linear-gradient(to right, #115DAA, #63B0FF);
+}
+
+.container{
+    width: 100%;
+    margin: 0;
+}
+
+.greeting > h1{
+    color: white;
+    font-weight: bold;
+    margin: 1em 0em 0em 1em;
+}
+
+.custom-card{
+    /* was 22em */
+    width: 80%;
+    margin: 4em 0em 0em 3em;
+}
+
+.custom-card > img {
+    width: 70%;
+    margin: 1em auto;
+}
+
+.card-body {
+    padding: 0em 1.2em !important;
+    margin-bottom: 1.5em;
+}
+
+.card-inner-title {
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: black;
+}
+
+.card-title:hover{
+    font-weight: 600;
+    color:#63B0FF;
+    text-decoration: none;
+}
+
+.inline-img {
+    display: inline-flex;
+    width: 32px;
+    margin: 0em 0.5em;
+    margin-bottom: 0.15em;
+    padding: 0;
+    align-self: center;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+footer > hr {
+    margin-top: 8em;
+    border: 1px solid white;
+    width: 95%;
+}
+
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+    .container {
+        width: 90%;
+        margin: 0 2em;
+    }
+
+    .greeting > h1 {
+        color: white;
+        margin: 1em 0em 0em 1em;
+    }
+
+    .custom-card {
+        width: 15em;
+        margin: 4em 0em 0em 4em;
+    }
+
+    .custom-card > img {
+        width: 60%;
+        margin: 1em auto;
+    }
+
+    .card-body {
+        padding: 0em 1.2em !important;
+        margin-bottom: 1.5em;
+    }
+
+    .card-inner-title {
+        font-weight: bold;
+    }
+
+    .card-title {
+        font-weight: 600;
+        color: black;
+    }
+
+    .card-title:hover {
+        font-weight: 600;
+        color: black;
+        text-decoration: none;
+    }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+
+}
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+}
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+}

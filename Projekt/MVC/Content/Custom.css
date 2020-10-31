@@ -1,0 +1,195 @@
+﻿body {
+    font-family: "HelveticaNeue", "Helvetica Neue", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    height: 100%;
+    background-image: linear-gradient(to right, #115DAA, #63B0FF);
+}
+
+.navbar {
+    background-image: linear-gradient(to right, #115DAA, #63B0FF);
+}
+
+.container {
+    width: 100%;
+    margin: 0;
+}
+
+.custom-link, .time-label{
+    float: right;
+    margin: 0.5em 0.5em 0em 0em;
+    text-decoration: none;
+    font-family: inherit;
+    font-size: 1.4em;
+    color: white;
+}
+
+.custom-link:hover{
+    text-decoration: none;
+    color:white;
+}
+
+.custom-col {
+    margin: 3em 0 0 5em;
+}
+
+.custom-panel{
+    height: 500px;
+}
+
+.btn-start, .btn-stop{
+    width: 90%;
+    height: 3em;
+    margin-top: 0.7em;
+    font-family: inherit;
+    font-size: 2em;
+    border-radius: 10px;
+}
+.btn-start {
+    background-color: #05AFF2;
+}
+
+.btn-start:hover{
+    background-color: #0481B3;
+    color: black;
+}
+
+.btn-stop {
+    background-color: #D50D1C;
+    float: right;
+}
+
+.btn-stop:hover{
+    background-color: #BD0B1A;
+    color: black;
+}
+
+.page-title {
+    color: white;
+    font-weight: bold;
+    font-size: 2.5em;
+    padding-left: 0 !important;
+}
+
+ul{
+    list-style: none;
+}
+
+ul li{
+    display: inline;
+}
+
+.custom-table {
+    width: 80%;
+    float: right;
+    margin: 4em 2em 0em 0em;
+    font-family: inherit;
+    font-size: 2em;
+    text-align: center;
+    color: white;
+    border: 3px solid white;
+    border-collapse: separate !important;
+    border-radius: 10px !important;
+    border-spacing: 10px;
+}
+
+.custom-table-head{
+    text-align: center;
+    border-top: hidden !important;
+    font-size: 1.4em;
+}
+
+.custom-table-row{
+    background-color: white;
+    color: black;
+    border: 5px solid black;
+    border-radius: 10px;
+}
+
+.activity-name{
+    color: black;
+}
+
+.activity-name:hover {
+    color: black;
+    text-decoration: none;
+}
+
+.time-table {
+    background-color: white;
+    border: hidden !important;
+    border-collapse: separate !important;
+    border-radius: 10px !important;
+}
+
+.table-head, .time-row-head, .time-row {
+    text-align: center;
+}
+
+.table-head {
+    font-size: 2.5em;
+    border-top: hidden !important;
+}
+
+.time-row-head {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.time-row {
+    font-size: 2em;
+    font-weight: bold;
+}
+
+#totalTime:hover{
+    cursor: pointer;
+}
+
+.custom-label, .total-time-label, .duration-in-minutes{
+    font-family: inherit;
+    font-size: 2em;
+    color: white;
+}
+
+.custom-label, #EditTime{
+    text-align:center;
+}
+
+.edit-time{
+    font-size: 2em;
+    height: 50px;
+    width: 90%;
+    color: black;
+    text-align: center;
+}
+
+.btn-save {
+    height: 50px;
+    width: 90%;
+    float: right;
+    font-family: inherit;
+    font-size: 1.5em;
+    background-color: orange;
+    color: white;
+}
+
+.total-time-label {
+    text-align: center;
+}
+
+.duration-in-minutes{
+    text-align: center;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+footer > hr {
+    margin-top: 8em;
+    border: 1px solid white;
+    width: 95%;
+}
